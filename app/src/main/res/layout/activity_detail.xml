@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.github.juanncode.challenge99minutes.ui.detail.DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.detail.DetailActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/teal_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/button_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_gravity="start|center_vertical"
+                android:src="@drawable/ic_arrow_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/detail"
+                android:layout_gravity="center"
+                style="@style/ThemeTitleBold"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/imgPoster"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:srcCompat="@tools:sample/backgrounds/scenic"
+            tools:ignore="ContentDescription" />
+
+        <ImageButton
+            android:id="@+id/image_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/shape_circle_green"
+            app:layout_constraintEnd_toEndOf="@+id/imgPoster"
+            app:layout_constraintTop_toBottomOf="@+id/imgPoster"
+            android:onClick="@{()-> viewmodel.onFavoriteClicked()}"
+            app:srcCompat="@drawable/ic_favorite_border"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPoster">
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                style="@style/ThemeTitleBold"
+                tools:text="Avengers End Game" />
+
+            <TextView
+                android:id="@+id/txtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                style="@style/ThemeTitleBoldSmall"
+                tools:text="Los Vengadores fueron un equipo compuesto por personas extraordinarias, individuos alterados u otras características especiales, que se encargaba de proteger la Tierra de las amenazas internacionales o alienígenas. Aunque principalmente estaban afiliados a los Estados Unidos..." />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

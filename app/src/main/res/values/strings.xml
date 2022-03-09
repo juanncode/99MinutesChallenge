@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Challenge99Minutes</string>
+    <string name="api_key">AIzaSyCGVMxXh4H3nPIlBL-J7Z0ot9a_b_KkWmE</string>
+    <string name="accept">Aceptar</string>
+    <string name="nearby_places">Lugares cercanos</string>
+    <string name="favorites">Favoritos</string>
+    <string name="detail">Detalle</string>
+    <string name="message_error_network">Aún puede revisar sus lugares favoritos. Si desea ver más, revise su conexión de red y vuelva a intentarlo</string>
+</resources>
